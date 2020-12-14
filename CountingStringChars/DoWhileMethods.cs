@@ -11,8 +11,34 @@ namespace CountingStringChars
         /// <returns>A number of digits in a string.</returns>
         public static int GetDigitCount(string str)
         {
-            // TODO #5. Analyze the implementation of "GetDigitCountRecursive" methods, and implement the method using the "do..while" loop statement.
-            throw new NotImplementedException();
+            if (str is null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (string.IsNullOrEmpty(str))
+            {
+                return 0;
+            }
+
+            int result = 0;
+            int i = 0;
+
+            do
+            {
+                if (char.IsDigit(str[i]))
+                {
+                    result++;
+                    i++;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+            while (i < str.Length);
+
+            return result;
         }
 
         /// <summary>
@@ -22,8 +48,34 @@ namespace CountingStringChars
         /// <returns>A number of letters in a string.</returns>
         public static int GetLetterCount(string str)
         {
-            // TODO #6. Analyze the implementation of "GetLetterCountRecursive" methods, and implement the method using the "do..while" loop statement.
-            throw new NotImplementedException();
+            if (str is null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            if (string.IsNullOrEmpty(str))
+            {
+                return 0;
+            }
+
+            int result = 0;
+            int i = 0;
+
+            do
+            {
+                if (char.IsLetter(str[i]))
+                {
+                    result++;
+                    i++;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+            while (i < str.Length);
+
+            return result;
         }
 
         /// <summary>

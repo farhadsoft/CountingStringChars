@@ -11,8 +11,27 @@ namespace CountingStringChars
         /// <returns>A number of white space characters in a string.</returns>
         public static int GetSpaceCount(string str)
         {
-            // TODO #3. Analyze the implementation of "GetSpaceCountRecursive" method, and implement the method using the "while" loop statement.
-            throw new NotImplementedException();
+            if (str is null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            int result = default;
+            int i = 0;
+            while (i < str.Length)
+            {
+                if (char.IsWhiteSpace(str[i]))
+                {
+                    result++;
+                    i++;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -22,8 +41,27 @@ namespace CountingStringChars
         /// <returns>A number of punctuation marks in a string.</returns>
         public static int GetPunctuationCount(string str)
         {
-            // TODO #4. Analyze the implementation of "GetSeparatorCount" method, and implement the method using the "while" loop statement.
-            throw new NotImplementedException();
+            if (str is null)
+            {
+                throw new ArgumentNullException(nameof(str));
+            }
+
+            int result = default;
+            int i = 0;
+            while (i < str.Length)
+            {
+                if (char.IsPunctuation(str[i]))
+                {
+                    result++;
+                    i++;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+
+            return result;
         }
 
         /// <summary>
